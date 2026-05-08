@@ -1,29 +1,36 @@
 import { motion } from 'framer-motion';
 import { Typewriter } from 'react-simple-typewriter';
-import { FaGithub, FaLinkedin, FaFacebook, FaEnvelope, FaDownload, FaMapMarkerAlt } from 'react-icons/fa';
+import {
+  FaGithub,
+  FaLinkedin,
+  FaFacebook,
+  FaEnvelope,
+  FaDownload,
+  FaMapMarkerAlt,
+} from 'react-icons/fa';
 import { BsArrowRight } from 'react-icons/bs';
 import { ParticlesBackground } from './ParticlesBackground';
 
 const socialLinks = [
-  { 
-    icon: FaGithub, 
-    href: 'https://github.com/alaminsarder', 
-    color: 'hover:text-gray-400' 
+  {
+    icon: FaGithub,
+    href: 'https://github.com/alaminsarder',
+    color: 'hover:text-gray-400',
   },
-  { 
-    icon: FaLinkedin, 
-    href: 'https://linkedin.com', 
-    color: 'hover:text-blue-500' 
+  {
+    icon: FaLinkedin,
+    href: 'https://linkedin.com',
+    color: 'hover:text-blue-500',
   },
-  { 
-    icon: FaFacebook, 
-    href: 'https://facebook.com/youralamin', 
-    color: 'hover:text-blue-600' 
+  {
+    icon: FaFacebook,
+    href: 'https://facebook.com/youralamin',
+    color: 'hover:text-blue-600',
   },
-  { 
-    icon: FaEnvelope, 
-    href: 'mailto:alamin.pub.24th@gmail.com', 
-    color: 'hover:text-red-500' 
+  {
+    icon: FaEnvelope,
+    href: 'mailto:alamin.pub.24th@gmail.com',
+    color: 'hover:text-red-500',
   },
 ];
 
@@ -41,7 +48,6 @@ export const Hero = () => {
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-500/20 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
-        
         {/* Left Side */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -64,9 +70,7 @@ export const Hero = () => {
           {/* Heading */}
           <h1 className="text-5xl md:text-7xl font-display font-bold leading-tight">
             Hi, I'm <br />
-            <span className="text-gradient">
-               AL Amin Sarder
-            </span>
+            <span className="text-gradient">AL Amin Sarder</span>
           </h1>
 
           {/* Typewriter */}
@@ -139,15 +143,14 @@ export const Hero = () => {
           </div>
         </motion.div>
 
-        {/* Right Side Image */}
+        {/* Right Side Image (✅ Mobile এও দেখাবে) */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative hidden md:block"
+          className="relative block"
         >
-          <div className="relative w-full aspect-square max-w-md mx-auto">
-            
+          <div className="relative w-64 sm:w-80 md:w-full aspect-square max-w-md mx-auto">
             {/* Glow */}
             <div className="absolute inset-0 bg-gradient-primary rounded-full blur-[100px] opacity-30 animate-pulse" />
 

@@ -154,7 +154,7 @@ export const Contact = () => {
             {/* Name Card */}
             <div className="mt-10 glass-card p-6 border border-white/10 rounded-2xl">
               <h4 className="text-2xl font-bold text-gradient mb-2">
-                MD Al Amin Sarder
+                MD AL Amin Sarder
               </h4>
 
               <p className="text-gray-400 leading-relaxed">

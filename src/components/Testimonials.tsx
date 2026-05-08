@@ -26,7 +26,7 @@ const testimonials = [
     role: 'Founder',
     company: 'DesignStudio',
     content:
-      'Al Amin Sarder not only writes great code but also has an amazing eye for design. The animations and UI details he implemented brought our website to life. A true full-stack talent.',
+      'AL Amin Sarder not only writes great code but also has an amazing eye for design. The animations and UI details he implemented brought our website to life. A true full-stack talent.',
     image:
       'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200',
   },
