@@ -158,7 +158,7 @@ export const Hero = () => {
             <div className="relative z-10 w-full h-full rounded-full border-2 border-white/10 overflow-hidden glass p-2">
               <img
                 src="https://i.ibb.co.com/Dd8b2BN/IMG-1629.jpg"
-                alt="MD Al Amin Sarder"
+                alt="MD AL Amin Sarder"
                 className="w-full h-full object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-500"
               />
             </div>
