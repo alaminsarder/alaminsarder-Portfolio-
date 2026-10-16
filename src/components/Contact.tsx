@@ -111,7 +111,7 @@ export const Contact = () => {
                 {
                   icon: FaLinkedin,
                   title: 'LinkedIn',
-                  detail: 'linkedin.com/in/md-al-amin-sarder',
+                  detail: 'linkedin.com/in/alaminsarder04',
                   link: 'https://linkedin.com',
                 },
                 {
