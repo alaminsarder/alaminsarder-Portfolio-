@@ -19,7 +19,7 @@ const socialLinks = [
   },
   {
     icon: FaLinkedin,
-    href: 'https://linkedin.com',
+    href: 'https://linkedin.com/alaminsarder04',
     color: 'hover:text-blue-500',
   },
   {
