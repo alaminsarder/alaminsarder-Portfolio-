@@ -48,18 +48,15 @@ export const Contact = () => {
       id="contact"
       className="py-24 relative bg-white border-t border-gray-100 overflow-hidden"
     >
-      {/* Decorative dots */}
       <div className="absolute top-20 left-10 grid grid-cols-5 gap-2 opacity-30 hidden lg:grid">
         {Array.from({ length: 25 }).map((_, i) => (
           <span key={i} className="w-1.5 h-1.5 rounded-full bg-[#1b2a4a]" />
         ))}
       </div>
 
-      {/* Decorative Circle */}
       <div className="absolute bottom-10 right-10 w-24 h-24 rounded-full border-2 border-rose-300/50 hidden md:block" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -80,7 +77,6 @@ export const Contact = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -93,9 +89,8 @@ export const Contact = () => {
             </h3>
 
             <p className="text-gray-500 mb-8 leading-relaxed">
-              Don't like forms? Send me an email. I usually respond within 24
-              hours. Connect with me on social media to keep track of my
-              journey.
+              Prefer email over forms? That works too — I usually reply
+              within a day. Feel free to reach out through any of these.
             </p>
 
             <div className="space-y-6">
@@ -122,7 +117,7 @@ export const Contact = () => {
                   icon: FaMapMarkerAlt,
                   title: 'Location',
                   detail: 'Bogura, Bangladesh',
-                  link: '#',
+                  link: 'https://www.google.com/maps/place/Bogura',
                 },
               ].map((item, idx) => (
                 <a
@@ -147,7 +142,6 @@ export const Contact = () => {
               ))}
             </div>
 
-            {/* Name Card */}
             <div className="mt-10 bg-[#f5f6f8] p-6 border border-gray-200 rounded-2xl">
               <h4 className="text-2xl font-serif text-[#1b2a4a] mb-2">
                 MD AL Amin Sarder
@@ -158,7 +152,6 @@ export const Contact = () => {
             </div>
           </motion.div>
 
-          {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}

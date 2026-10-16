@@ -67,13 +67,11 @@ export const Hero = () => {
           transition={{ duration: 0.8 }}
           className="flex flex-col gap-6"
         >
-          {/* Heading */}
           <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-[#1b2a4a] leading-[1.15]">
             Hi, I'm <br />
             AL Amin Sarder
           </h1>
 
-          {/* Typewriter */}
           <div className="text-xl md:text-2xl font-semibold text-gray-500 h-10">
             <Typewriter
               words={[
@@ -92,20 +90,18 @@ export const Hero = () => {
             />
           </div>
 
-          {/* Description */}
           <p className="text-gray-500 text-lg max-w-lg leading-relaxed">
-            Passionate CSE student and full-stack web developer focused on
-            creating modern, responsive, and user-friendly applications with
-            clean UI, smooth animations, and scalable architecture.
+            I'm a Computer Science student who builds full-stack web apps
+            with the MERN stack and is currently picking up Flutter for
+            mobile development. Outside of coding, you'll usually find me
+            solving problems on Codeforces or LeetCode.
           </p>
 
-          {/* Location */}
           <div className="flex items-center gap-2 text-gray-500 text-sm">
             <span className="w-2 h-2 rounded-full bg-rose-500" />
             <span>Bogura, Bangladesh</span>
           </div>
 
-          {/* Buttons */}
           <div className="flex flex-wrap items-center gap-4 mt-4">
             <a
               href="#contact"
@@ -123,7 +119,6 @@ export const Hero = () => {
             </a>
           </div>
 
-          {/* Social Links */}
           <div className="flex items-center gap-4 mt-6">
             {socialLinks.map((social, index) => (
               <motion.a
@@ -140,7 +135,7 @@ export const Hero = () => {
           </div>
         </motion.div>
 
-        {/* Right Side - Image (Full Circle) */}
+        {/* Right Side - Image */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -148,10 +143,8 @@ export const Hero = () => {
           className="relative flex justify-center md:justify-end"
         >
           <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96">
-            {/* Accent ring behind image */}
             <div className="absolute -top-5 -right-5 w-full h-full rounded-full border-2 border-rose-300/50 -z-10" />
 
-            {/* Dark circular background like reference */}
             <div className="relative w-full h-full rounded-full bg-[#2a2a2a] p-3 shadow-2xl">
               <div className="w-full h-full rounded-full overflow-hidden">
                 <img
@@ -162,7 +155,6 @@ export const Hero = () => {
               </div>
             </div>
 
-            {/* Small decorative dot accent */}
             <div className="absolute -bottom-3 -left-3 w-6 h-6 rounded-full bg-rose-500 shadow-lg" />
           </div>
         </motion.div>

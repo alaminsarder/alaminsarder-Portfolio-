@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt, FaAndroid } from 'react-icons/fa';
 
@@ -6,7 +5,7 @@ const projects = [
   {
     title: 'StreetFix',
     description:
-      'A community-driven issue reporting system for urban maintenance. Users can report potholes, broken lights, and track the resolution process in real-time.',
+      'A platform where people can report local issues — potholes, broken streetlights, damaged roads — and actually track what happens to the report, instead of it disappearing into a void.',
     image:
       'https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80&w=1000',
     tech: ['React', 'Node.js', 'MongoDB', 'Tailwind', 'Google Maps API'],
@@ -17,7 +16,7 @@ const projects = [
   {
     title: 'Smart Farm Sheba',
     description:
-      'An intelligent farming service platform designed to assist farmers with real-time crop monitoring, resource management, and data-driven agricultural decisions.',
+      'A mobile app for farmers to monitor crops, manage resources, and track farming activity in real time, without needing to dig through a complicated interface.',
     image:
       'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&q=80&w=1000',
     tech: ['Flutter', 'Dart', 'Firebase', 'Cloud Firestore', 'Material 3'],
@@ -28,7 +27,7 @@ const projects = [
   {
     title: 'AgriMonitor',
     description:
-      'A smart desktop application for farmers to manage agricultural records, monitor crop activities, track irrigation and pesticide usage, and calculate farming costs, sales, and profits.',
+      'A desktop tool built in Java for farmers to keep track of crop activity, irrigation, and pesticide usage, and to calculate costs, sales, and profit in one place.',
     image:
       'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=1000',
     tech: ['Core Java', 'Java Swing', 'OOP', 'MongoDB'],
@@ -39,7 +38,7 @@ const projects = [
   {
     title: 'BMI Calculator (WinAPI C++)',
     description:
-      'A lightweight desktop application built with native Windows API and C++, allowing users to calculate their Body Mass Index with a clean, responsive GUI.',
+      'A small project built with native Windows API and C++ to calculate Body Mass Index through a lightweight, no-frills desktop GUI.',
     image:
       'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=1000',
     tech: ['C++', 'WinAPI', 'Windows GUI', 'OOP'],
@@ -62,11 +61,9 @@ export const Projects = () => {
         ))}
       </div>
 
-      {/* Decorative Circle */}
       <div className="absolute bottom-20 left-10 w-20 h-20 rounded-full border-2 border-rose-300/50 hidden md:block" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -81,12 +78,11 @@ export const Projects = () => {
             Featured Projects
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto mt-4">
-            A selection of my best work in full-stack development, showcasing
-            complex problem solving, intuitive UI, and scalable architecture.
+            A few projects I've built across web, mobile, and desktop — each
+            one taught me something different.
           </p>
         </motion.div>
 
-        {/* Projects Grid */}
         <div className="grid md:grid-cols-2 gap-10">
           {projects.map((project, idx) => (
             <motion.div
@@ -98,7 +94,6 @@ export const Projects = () => {
               whileHover={{ y: -10 }}
               className="bg-[#f5f6f8] rounded-2xl overflow-hidden group border border-gray-200 hover:border-rose-300 hover:shadow-xl transition-all duration-300 flex flex-col"
             >
-              {/* Image */}
               <div className="relative h-64 overflow-hidden">
                 <div className="absolute inset-0 bg-[#1b2a4a]/20 group-hover:bg-transparent transition-all z-10" />
 
@@ -108,7 +103,6 @@ export const Projects = () => {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
 
-                {/* Platform Badge */}
                 {project.type === 'android' && (
                   <div className="absolute top-4 right-4 z-20 flex items-center gap-1.5 px-3 py-1.5 bg-green-500/90 backdrop-blur-md rounded-full text-white text-xs font-semibold shadow-md">
                     <FaAndroid className="text-sm" />
@@ -121,7 +115,6 @@ export const Projects = () => {
                   </div>
                 )}
 
-                {/* Buttons */}
                 <div className="absolute bottom-4 left-4 z-20 flex gap-2">
                   <a
                     href={project.github}
@@ -147,7 +140,6 @@ export const Projects = () => {
                 </div>
               </div>
 
-              {/* Content */}
               <div className="p-8 flex-1 flex flex-col">
                 <h3 className="text-2xl font-serif text-[#1b2a4a] mb-3 group-hover:text-rose-500 transition-colors">
                   {project.title}
@@ -157,7 +149,6 @@ export const Projects = () => {
                   {project.description}
                 </p>
 
-                {/* Tech Stack */}
                 <div className="flex flex-wrap gap-2 mt-auto">
                   {project.tech.map((t, i) => (
                     <span
@@ -173,7 +164,6 @@ export const Projects = () => {
           ))}
         </div>
 
-        {/* View All */}
         <div className="text-center mt-12">
           <a
             href="https://github.com/alaminsarder"

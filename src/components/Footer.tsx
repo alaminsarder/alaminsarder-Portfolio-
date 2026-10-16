@@ -24,7 +24,6 @@ export const Footer = () => {
 
   return (
     <footer className="relative bg-[#1b2a4a] overflow-hidden">
-      {/* Decorative Wave Top */}
       <svg
         className="absolute top-0 left-0 w-full opacity-10 pointer-events-none"
         viewBox="0 0 1440 100"
@@ -38,13 +37,10 @@ export const Footer = () => {
         />
       </svg>
 
-      {/* Decorative Circle */}
       <div className="absolute top-10 right-16 w-20 h-20 rounded-full border-2 border-rose-400/30 hidden md:block" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* Top Section */}
         <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Brand Column */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -62,9 +58,9 @@ export const Footer = () => {
             </div>
 
             <p className="text-gray-300 text-sm leading-relaxed max-w-sm">
-              Passionate CSE student and full-stack web developer crafting
-              modern, responsive, and user-friendly digital experiences with
-              clean code and thoughtful design.
+              CSE student building full-stack web apps with the MERN stack,
+              currently learning Flutter for mobile development. Always
+              working on something new.
             </p>
 
             <div className="flex items-center gap-4 mt-2">
@@ -84,7 +80,6 @@ export const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Quick Links */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -114,7 +109,6 @@ export const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -148,10 +142,8 @@ export const Footer = () => {
           </motion.div>
         </div>
 
-        {/* Divider */}
         <div className="h-px bg-white/10" />
 
-        {/* Bottom Bar */}
         <div className="py-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-gray-400 text-sm font-medium text-center md:text-left flex items-center gap-1.5 flex-wrap justify-center">
             &copy; {new Date().getFullYear()} Designed & Developed with
