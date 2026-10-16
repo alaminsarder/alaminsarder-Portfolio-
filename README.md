@@ -1,1 +1,1 @@
-**Live Portfolio Link:** : https://alaminsarder.netlify.app/
+**Live Portfolio Link:** : https://alaminsarder.vercel.app/
