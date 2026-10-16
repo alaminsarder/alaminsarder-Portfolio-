@@ -1,5 +1,6 @@
+
 import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaAndroid } from 'react-icons/fa';
 
 const projects = [
   {
@@ -9,41 +10,42 @@ const projects = [
     image:
       'https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80&w=1000',
     tech: ['React', 'Node.js', 'MongoDB', 'Tailwind', 'Google Maps API'],
-    github: 'https://github.com/alaminsarder',
+    github: 'https://github.com/alaminsarder/StreetFix',
     live: 'https://streetfix-qhie.onrender.com/',
+    type: 'web',
   },
-
   {
-    title: 'Premium Book Reader',
+    title: 'Smart Farm Sheba',
     description:
-      'Membership-based digital book platform featuring custom e-reader, offline access, progress tracking, and personalized recommendations based on reading history.',
+      'An intelligent farming service platform designed to assist farmers with real-time crop monitoring, resource management, and data-driven agricultural decisions.',
     image:
-      'https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=1000',
-    tech: ['Next.js', 'PostgreSQL', 'Stripe', 'Redux', 'AWS S3'],
-    github: 'https://github.com/alaminsarder',
-    live: 'https://premium-book-reader.vercel.app/',
+      'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&q=80&w=1000',
+    tech: ['Flutter', 'Dart', 'Firebase', 'Cloud Firestore', 'Material 3'],
+    github: 'https://github.com/alaminsarder/Smart-Farm-Sheba',
+    live: 'https://github.com/alaminsarder/Smart-Farm-Sheba',
+    type: 'android',
   },
-
   {
-    title: 'E-Commerce Platform',
+    title: 'AgriMonitor',
     description:
-      'Fully responsive e-commerce application with seamless cart management, secure checkout, admin dashboard, and dynamic product filtering.',
+      'A smart desktop application for farmers to manage agricultural records, monitor crop activities, track irrigation and pesticide usage, and calculate farming costs, sales, and profits.',
     image:
-      'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=1000',
-    tech: ['React', 'Express', 'MongoDB', 'JWT', 'Tailwind'],
-    github: 'https://github.com/alaminsarder',
-    live: 'https://github.com/alaminsarder',
+      'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=1000',
+    tech: ['Core Java', 'Java Swing', 'OOP', 'MongoDB'],
+    github: 'https://github.com/alaminsarder/AgriMonitor',
+    live: 'https://github.com/alaminsarder/AgriMonitor',
+    type: 'desktop',
   },
-
   {
-    title: 'Refer And Earn App',
+    title: 'BMI Calculator (WinAPI C++)',
     description:
-      'Viral marketing platform enabling users to generate unique referral codes, track invites, and earn rewards securely through an automated system.',
+      'A lightweight desktop application built with native Windows API and C++, allowing users to calculate their Body Mass Index with a clean, responsive GUI.',
     image:
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000',
-    tech: ['Vue.js', 'Firebase', 'Node.js', 'Tailwind'],
-    github: 'https://github.com/alaminsarder',
-    live: 'https://github.com/alaminsarder',
+      'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=1000',
+    tech: ['C++', 'WinAPI', 'Windows GUI', 'OOP'],
+    github: 'https://github.com/alaminsarder/BMI-Calculator--WinAPI-C-',
+    live: 'https://github.com/alaminsarder/BMI-Calculator--WinAPI-C-',
+    type: 'desktop',
   },
 ];
 
@@ -51,10 +53,19 @@ export const Projects = () => {
   return (
     <section
       id="projects"
-      className="py-24 relative bg-dark-900 border-t border-white/5"
+      className="py-24 relative bg-white border-t border-gray-100 overflow-hidden"
     >
+      {/* Decorative dots */}
+      <div className="absolute top-16 right-10 grid grid-cols-5 gap-2 opacity-30 hidden lg:grid">
+        {Array.from({ length: 25 }).map((_, i) => (
+          <span key={i} className="w-1.5 h-1.5 rounded-full bg-[#1b2a4a]" />
+        ))}
+      </div>
+
+      {/* Decorative Circle */}
+      <div className="absolute bottom-20 left-10 w-20 h-20 rounded-full border-2 border-rose-300/50 hidden md:block" />
+
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -63,11 +74,13 @@ export const Projects = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-            Featured <span className="text-gradient">Projects</span>
+          <p className="text-rose-500 font-semibold tracking-widest text-sm uppercase mb-3">
+            My Work
+          </p>
+          <h2 className="font-serif text-4xl md:text-5xl text-[#1b2a4a]">
+            Featured Projects
           </h2>
-
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="text-gray-500 max-w-2xl mx-auto mt-4">
             A selection of my best work in full-stack development, showcasing
             complex problem solving, intuitive UI, and scalable architecture.
           </p>
@@ -83,12 +96,11 @@ export const Projects = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               whileHover={{ y: -10 }}
-              className="glass-card overflow-hidden group border border-white/10 hover:border-primary-500/50 transition-all flex flex-col"
+              className="bg-[#f5f6f8] rounded-2xl overflow-hidden group border border-gray-200 hover:border-rose-300 hover:shadow-xl transition-all duration-300 flex flex-col"
             >
-              
               {/* Image */}
               <div className="relative h-64 overflow-hidden">
-                <div className="absolute inset-0 bg-dark-900/40 group-hover:bg-transparent transition-all z-10" />
+                <div className="absolute inset-0 bg-[#1b2a4a]/20 group-hover:bg-transparent transition-all z-10" />
 
                 <img
                   src={project.image}
@@ -96,38 +108,52 @@ export const Projects = () => {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
 
+                {/* Platform Badge */}
+                {project.type === 'android' && (
+                  <div className="absolute top-4 right-4 z-20 flex items-center gap-1.5 px-3 py-1.5 bg-green-500/90 backdrop-blur-md rounded-full text-white text-xs font-semibold shadow-md">
+                    <FaAndroid className="text-sm" />
+                    Android App
+                  </div>
+                )}
+                {project.type === 'desktop' && (
+                  <div className="absolute top-4 right-4 z-20 flex items-center gap-1.5 px-3 py-1.5 bg-indigo-500/90 backdrop-blur-md rounded-full text-white text-xs font-semibold shadow-md">
+                    Desktop App
+                  </div>
+                )}
+
                 {/* Buttons */}
                 <div className="absolute bottom-4 left-4 z-20 flex gap-2">
-                  
-                  {/* GitHub */}
                   <a
                     href={project.github}
-                    className="p-3 bg-dark-900/80 hover:bg-primary-500 backdrop-blur-md rounded-full text-white transition-colors"
+                    className="p-3 bg-white/90 hover:bg-[#1b2a4a] backdrop-blur-md rounded-full text-[#1b2a4a] hover:text-white transition-colors shadow-md"
                     target="_blank"
                     rel="noreferrer"
+                    aria-label={`View ${project.title} source code on GitHub`}
                   >
                     <FaGithub className="text-xl" />
                   </a>
 
-                  {/* Live */}
-                  <a
-                    href={project.live}
-                    className="p-3 bg-dark-900/80 hover:bg-accent-500 backdrop-blur-md rounded-full text-white transition-colors"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <FaExternalLinkAlt className="text-xl" />
-                  </a>
+                  {project.type === 'web' && (
+                    <a
+                      href={project.live}
+                      className="p-3 bg-white/90 hover:bg-rose-500 backdrop-blur-md rounded-full text-[#1b2a4a] hover:text-white transition-colors shadow-md"
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`Open ${project.title} live demo`}
+                    >
+                      <FaExternalLinkAlt className="text-xl" />
+                    </a>
+                  )}
                 </div>
               </div>
 
               {/* Content */}
               <div className="p-8 flex-1 flex flex-col">
-                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-primary-400 transition-colors">
+                <h3 className="text-2xl font-serif text-[#1b2a4a] mb-3 group-hover:text-rose-500 transition-colors">
                   {project.title}
                 </h3>
 
-                <p className="text-gray-400 mb-6 leading-relaxed flex-1">
+                <p className="text-gray-500 mb-6 leading-relaxed flex-1">
                   {project.description}
                 </p>
 
@@ -136,7 +162,7 @@ export const Projects = () => {
                   {project.tech.map((t, i) => (
                     <span
                       key={i}
-                      className="px-3 py-1 text-xs font-medium text-primary-400 bg-primary-900/30 border border-primary-500/20 rounded-full"
+                      className="px-3 py-1 text-xs font-medium text-rose-600 bg-rose-50 border border-rose-200 rounded-full"
                     >
                       {t}
                     </span>
@@ -153,7 +179,7 @@ export const Projects = () => {
             href="https://github.com/alaminsarder"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-3 rounded-full border border-white/20 text-white hover:bg-white/5 transition-colors font-medium"
+            className="inline-flex items-center gap-2 px-8 py-3 rounded-md border-2 border-gray-300 text-[#1b2a4a] hover:border-[#1b2a4a] hover:bg-[#1b2a4a] hover:text-white transition-colors font-semibold"
           >
             View All Projects on GitHub
             <FaExternalLinkAlt className="text-sm" />

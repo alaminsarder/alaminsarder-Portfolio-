@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { SiCodeforces, SiLeetcode, SiHackerrank } from 'react-icons/si';
-import { FaTrophy, FaStar } from 'react-icons/fa';
+import { FaTrophy, FaStar, FaExternalLinkAlt } from 'react-icons/fa';
 
 const cpStats = [
   {
@@ -8,8 +8,9 @@ const cpStats = [
     icon: SiCodeforces,
     rating: '1850',
     title: 'Expert',
-    color: 'text-blue-500',
-    bg: 'bg-blue-500/10',
+    color: 'text-blue-600',
+    bg: 'bg-blue-50',
+    border: 'border-blue-200',
     stats: '800+ Problems Solved',
     link: '#',
   },
@@ -18,8 +19,9 @@ const cpStats = [
     icon: SiLeetcode,
     rating: 'Top 5%',
     title: 'Knight',
-    color: 'text-yellow-500',
-    bg: 'bg-yellow-500/10',
+    color: 'text-amber-600',
+    bg: 'bg-amber-50',
+    border: 'border-amber-200',
     stats: '1200+ Problems Solved',
     link: '#',
   },
@@ -28,8 +30,9 @@ const cpStats = [
     icon: FaStar,
     rating: '1200',
     title: 'Cyan',
-    color: 'text-cyan-500',
-    bg: 'bg-cyan-500/10',
+    color: 'text-cyan-600',
+    bg: 'bg-cyan-50',
+    border: 'border-cyan-200',
     stats: '300+ Problems Solved',
     link: '#',
   },
@@ -38,8 +41,9 @@ const cpStats = [
     icon: SiHackerrank,
     rating: '6 Stars',
     title: 'Problem Solving',
-    color: 'text-green-500',
-    bg: 'bg-green-500/10',
+    color: 'text-emerald-600',
+    bg: 'bg-emerald-50',
+    border: 'border-emerald-200',
     stats: 'Gold Badge',
     link: '#',
   },
@@ -54,10 +58,16 @@ const achievements = [
 
 export const CompetitiveProgramming = () => {
   return (
-    <section id="cp" className="py-24 relative bg-dark-800 border-t border-white/5">
-      <div className="absolute top-0 right-0 w-96 h-96 bg-primary-500/10 rounded-full blur-[100px] pointer-events-none" />
-      
+    <section
+      id="cp"
+      className="py-24 relative bg-[#eceef1] border-t border-gray-200 overflow-hidden"
+    >
+      {/* Decorative blur */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-rose-200/20 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-10 left-10 w-20 h-20 rounded-full border-2 border-indigo-200 hidden md:block" />
+
       <div className="max-w-7xl mx-auto px-6 relative z-10">
+        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -65,50 +75,71 @@ export const CompetitiveProgramming = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-            Competitive <span className="text-gradient">Programming</span>
+          <p className="text-rose-500 font-semibold tracking-widest text-sm uppercase mb-3">
+            Problem Solving
+          </p>
+          <h2 className="font-serif text-4xl md:text-5xl text-[#1b2a4a]">
+            Competitive Programming
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Problem-solving is my passion. Here are my statistics and achievements across various coding platforms.
+          <p className="text-gray-500 max-w-2xl mx-auto mt-4">
+            Problem-solving is my passion. Here are my statistics and
+            achievements across various coding platforms.
           </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Stats Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {cpStats.map((stat, idx) => (
               <motion.a
                 href={stat.link}
+                target="_blank"
+                rel="noreferrer"
                 key={idx}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="glass-card p-6 border border-white/5 hover:border-white/20 transition-all flex flex-col items-center text-center group"
+                whileHover={{ y: -6 }}
+                className="bg-white p-6 rounded-2xl border border-gray-200 hover:border-rose-300 hover:shadow-xl transition-all flex flex-col items-center text-center group relative"
               >
-                <div className={`p-4 rounded-full ${stat.bg} ${stat.color} mb-4 group-hover:scale-110 transition-transform`}>
+                {/* External link icon */}
+                <FaExternalLinkAlt className="absolute top-4 right-4 text-xs text-gray-300 group-hover:text-rose-400 transition-colors" />
+
+                <div
+                  className={`p-4 rounded-2xl ${stat.bg} ${stat.color} border ${stat.border} mb-4 group-hover:scale-110 transition-transform duration-300`}
+                >
                   <stat.icon className="text-3xl" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-1">{stat.platform}</h3>
-                <p className={`text-lg font-bold mb-2 ${stat.color}`}>{stat.rating} - {stat.title}</p>
-                <p className="text-sm text-gray-400 font-medium">{stat.stats}</p>
+                <h3 className="text-lg font-serif text-[#1b2a4a] mb-1">
+                  {stat.platform}
+                </h3>
+                <p className={`text-lg font-bold mb-2 ${stat.color}`}>
+                  {stat.rating} <span className="text-gray-400 font-normal">·</span> {stat.title}
+                </p>
+                <p className="text-sm text-gray-500 font-medium">{stat.stats}</p>
               </motion.a>
             ))}
           </div>
 
+          {/* Achievements Card */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="glass-card p-8 h-full flex flex-col justify-center"
+            className="bg-white p-8 md:p-10 rounded-2xl border border-gray-200 shadow-sm h-full flex flex-col justify-center"
           >
             <div className="flex items-center gap-4 mb-8">
-              <FaTrophy className="text-4xl text-yellow-500" />
-              <h3 className="text-3xl font-bold text-white">Top Achievements</h3>
+              <div className="p-3 rounded-xl bg-amber-50 border border-amber-200">
+                <FaTrophy className="text-2xl text-amber-500" />
+              </div>
+              <h3 className="text-2xl md:text-3xl font-serif text-[#1b2a4a]">
+                Top Achievements
+              </h3>
             </div>
-            
-            <ul className="space-y-6">
+
+            <ul className="space-y-5">
               {achievements.map((ach, idx) => (
                 <motion.li
                   key={idx}
@@ -118,15 +149,23 @@ export const CompetitiveProgramming = () => {
                   transition={{ duration: 0.5, delay: 0.3 + idx * 0.1 }}
                   className="flex items-start gap-4"
                 >
-                  <div className="mt-1 w-2 h-2 rounded-full bg-primary-500 animate-pulse" />
-                  <p className="text-gray-300 font-medium leading-relaxed flex-1">{ach}</p>
+                  <div className="mt-1.5 w-2 h-2 rounded-full bg-rose-500 shrink-0" />
+                  <p className="text-gray-600 font-medium leading-relaxed flex-1">
+                    {ach}
+                  </p>
                 </motion.li>
               ))}
             </ul>
-            
-            <div className="mt-10 p-6 rounded-xl bg-gradient-to-r from-primary-900/40 to-accent-900/40 border border-primary-500/20 text-center">
-              <h4 className="text-2xl font-bold text-white mb-2">Total Problems Solved</h4>
-              <p className="text-4xl font-display font-bold text-gradient">2,500+</p>
+
+            {/* Total Solved Highlight */}
+            <div className="mt-10 p-6 rounded-xl bg-[#1b2a4a] text-center relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/20 rounded-full blur-[60px]" />
+              <h4 className="text-lg font-medium text-gray-300 mb-2 relative z-10">
+                Total Problems Solved
+              </h4>
+              <p className="text-4xl font-serif font-bold text-white relative z-10">
+                2,500<span className="text-rose-400">+</span>
+              </p>
             </div>
           </motion.div>
         </div>

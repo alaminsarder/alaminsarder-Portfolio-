@@ -45,20 +45,20 @@ export const CustomCursor = () => {
   return (
     <>
       <motion.div
-        className="fixed top-0 left-0 w-8 h-8 rounded-full border-2 border-primary-500 pointer-events-none z-[9999] hidden md:block"
+        className="fixed top-0 left-0 w-8 h-8 rounded-full border-2 pointer-events-none z-[9999] hidden md:block"
         style={{
           x: smoothX,
           y: smoothY,
         }}
         animate={{
           scale: isHovered ? 1.5 : 1,
-          backgroundColor: isHovered ? 'rgba(59, 130, 246, 0.2)' : 'transparent',
-          borderColor: isHovered ? 'transparent' : '#3b82f6',
+          backgroundColor: isHovered ? 'rgba(217, 83, 79, 0.15)' : 'transparent',
+          borderColor: isHovered ? 'transparent' : '#1b2a4a',
         }}
         transition={{ duration: 0.15 }}
       />
       <motion.div
-        className="fixed top-0 left-0 w-2 h-2 bg-accent-500 rounded-full pointer-events-none z-[10000] hidden md:block ml-3 mt-3"
+        className="fixed top-0 left-0 w-2 h-2 bg-rose-500 rounded-full pointer-events-none z-[10000] hidden md:block ml-3 mt-3"
         style={{
           x: dotX,
           y: dotY,

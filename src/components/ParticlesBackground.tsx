@@ -36,13 +36,13 @@ export const ParticlesBackground = () => {
         },
         particles: {
           color: {
-            value: '#3b82f6',
+            value: '#1b2a4a',
           },
           links: {
-            color: '#8b5cf6',
+            color: '#d9534f',
             distance: 150,
             enable: true,
-            opacity: 0.2,
+            opacity: 0.12,
             width: 1,
           },
           move: {
@@ -52,7 +52,7 @@ export const ParticlesBackground = () => {
               default: 'bounce',
             },
             random: false,
-            speed: 1,
+            speed: 0.8,
             straight: false,
           },
           number: {
@@ -60,10 +60,10 @@ export const ParticlesBackground = () => {
               enable: true,
               area: 800,
             },
-            value: 40,
+            value: 30,
           },
           opacity: {
-            value: 0.3,
+            value: 0.15,
           },
           shape: {
             type: 'circle',
